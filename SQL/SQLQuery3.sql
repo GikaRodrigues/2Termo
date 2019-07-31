@@ -1,0 +1,16 @@
+CREATE DATABASE M_SStop;
+
+USE M_SStop;
+
+CREATE TABLE EstilosMusicais
+(
+	IdEstiloMusical INT PRIMARY KEY IDENTITY
+	,Nome VARCHAR(200)UNIQUE NOT NULL
+);
+
+CREATE TABLE Artistas
+(
+	IdArtistas INT PRIMARY KEY IDENTITY
+	,Nome VARCHAR (200)NOT NULL
+	,IdEstiloMusical INT FOREIGN KEY REFERENCES EstilosMusicais (IdEstiloMusical)
+);
