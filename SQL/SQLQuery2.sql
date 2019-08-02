@@ -14,6 +14,11 @@ INSERT INTO Cursos	(Nome)
 SELECT IdCurso, Nome
 	FROM Cursos;
 
+INSERT INTO Disciplinas (Nome, IdCurso)
+		VALUES		('HTML', 1) , ('CE' , 2);
+
+SELECT * FROM Disciplinas;
+
 SELECT Nome
 	FROM Cursos;
 
@@ -22,6 +27,9 @@ SELECT *
 
 SELECT Nome ,IdCurso
 	FROM Cursos;
+
+SELECT *
+	FROM Disciplinas;
 
 SELECT * FROM Cursos WHERE IdCurso >= 1;
 
@@ -39,4 +47,9 @@ SELECT IdCurso, Nome
 
 DELETE FROM Cursos
 	WHERE IdCurso = 6;
+
+SELECT C.*, D.*
+	FROM Disciplinas D
+	JOIN Cursos C
+	ON D. IdCurso = C.IdCurso;
 

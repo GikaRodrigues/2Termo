@@ -15,4 +15,29 @@ INSERT INTO	Artistas (Nome , IdEstiloMusical)
 SELECT * 
 		FROM Artistas;
 
-DELETE FROM Artistas WHERE IdArtistas = 4;
+SELECT * FROM EstilosMusicais 
+	WHERE IdEstiloMusical = 1;
+
+SELECT * FROM EstilosMusicais 
+	WHERE Nome = 'Rock';
+
+SELECT * FROM EstilosMusicais 
+	WHERE Nome LIKE 'Roc%';
+	
+SELECT * FROM EstilosMusicais 
+	WHERE Nome LIKE '%k';
+
+SELECT * FROM EstilosMusicais 
+	WHERE Nome LIKE '%o%';
+
+SELECT Artistas.*, EstilosMusicais.*
+	FROM Artistas
+	JOIN EstilosMusicais
+	ON Artistas. IdEstiloMusical = EstilosMusicais.IdEstiloMusical;
+
+DELETE FROM Artistas 
+	WHERE IdArtistas = 5;
+
+
+INSERT INTO	Artistas (Nome , IdEstiloMusical)
+		VALUES		('Michel Jackson' , 2);
